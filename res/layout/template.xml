@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <LinearLayout android:id="@+id/menu" android:layout_width="match_parent" android:layout_height="fill_parent"
+        android:orientation="vertical">
+        <ListView android:id="@+id/menu_list" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical"/>
+    </LinearLayout>
+    <LinearLayout android:id="@+id/app" android:layout_width="match_parent" android:layout_height="fill_parent"
+        android:orientation="vertical" android:background="#ffffffff">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="50dip"
+    android:background="#FF178200">
+    <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/menu_icon"
+    android:layout_width="50dip"
+    android:layout_height="50dip"
+    android:background="@drawable/ic_launcher"
+    android:layout_alignParentLeft="true"/>
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/title"
+    android:layout_width="wrap_content"
+    android:layout_height="50dip"
+    android:background="@drawable/ic_launcher"
+    android:layout_alignParentLeft="true"/>
+    <Button xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="50dip"
+    android:layout_height="50dip"
+    android:id = "@+id/top_button"
+    android:layout_alignParentRight="true"/>
+</RelativeLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parent_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFDDDDDD">    
+</LinearLayout>
+    </LinearLayout>
+</FrameLayout>

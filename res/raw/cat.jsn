@@ -1,0 +1,12 @@
+[
+		{
+			"id":0,
+			"name":"Обувь",
+			"link":"shoes.jsn"	
+		},
+		{
+			"id":1,
+			"name":"Одежда",
+			"link":"clothe.jsn"	
+		}
+]

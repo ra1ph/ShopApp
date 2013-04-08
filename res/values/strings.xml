@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Contact info -->
+	<string name="addres">Расположен по адресу: Украина, г.Днепропетровск, ул. К.Маркса 111, офис 37</string>
+	<string name="tel1">(056) 788-93-91</string>
+	<string name="tel2">(056) 794-52-22</string>
+	<string name="tel3">(067) 539-72-72</string>
+	<string name="tel4">(068) 900-75-75</string>
+	<string name="icq1">40101010</string>
+	<string name="icq2">288555251</string>
+	<string name="mail1">info@mobileoffice.dp.ua</string>
+	
+    <!-- Activity titles -->
+    <string name="app_name">Shopping helper</string>
+    <string name="ac_name_image_list">Image List Example</string>
+    <string name="ac_name_image_grid">Image Grid Example</string>
+    <string name="ac_name_image_pager">Image Pager Example</string>
+    <string name="ac_name_image_gallery">Image Gallery Example</string>
+    <!-- Labels -->
+    <string name="label_activity_examples">Activity Examples</string>
+    <string name="menu_item_clear_memory_cache">Clear memory cache</string>
+    <string name="menu_item_clear_disc_cache">Clear disc cache</string>
+    <string name="button_image_list">Image List</string>
+    <string name="button_image_grid">Image Grid</string>
+    <string name="button_image_pager">Image Pager</string>
+    <string name="button_image_gallery">Image Gallery</string>
+    <!-- Content descriptions -->
+    <string name="descr_image">Image</string>
+    <string name="search_hint">Введите название...</string>
+    <string name="info_item">Информация о товаре</string>
+	<string name="cost_text">Стоимость товара</string>
+	<string name="notify_me">Уведомить меня</string>
+	<string name="add_basket">Добавить в корзину</string>
+	<string name="del_compare">Убрать из сравнения</string>
+	<string name="info_sale">Информация о заказе</string>
+	<string name="in_your_basket">У вас в корзине:</string>
+	<string name="money_for_sale">К оплате:</string>	
+	<string name="confirm_order">Подтвердить заказ</string>	
+	<string name="fio">ФИО:</string>	
+	<string name="help_fio">Введите Ф.И.О.</string>	
+	<string name="n_tel">№ телефона</string>	
+	<string name="help_n_tel">Введите № телефона</string>	
+	<string name="order_sub">Подтвердить</string>	
+	<string name="thank">Благодарим за покупку!</string>	
+	<string name="our_managers">Наши менеджеры свяжуться с вами в ближайшее время!</string>		
+	<string name="check_compare">Сравнение</string>		
+	<string name="check_best">Избранное</string>				
+	<string name="check_basket">Корзина</string>				
+	<string name="order_status">Статус:</string>	
+	<string name="contact_info">Контактная информация</string>	
+	<string name="sale_name">Магазин Mobileoffice </string>	
+	<string name="see_map">Посмотреть на карте</string>	
+	<string name="ask_callback">Запросить обратный звонок</string>
+	<string name="send_mail">Отправить письмо</string>		
+	<string name="icq">ICQ: </string>		
+	<string name="email">E-mail: </string>
+	<string name="you_may_get_order">Вы можете подъехать в любое удобное для вас время и забрать товар.</string>	
+	<string name="you_order_delivered">Ваш заказ уже на складе</string>
+	<string name="i_will_come">Да, я скоро заеду</string>
+	<string name="notify_later">Нет, напомнить мне позже</string>
+	<string name="you_plan_come">Вы планируете заехать</string>
+	<string name="precision_time">Я буду точно вовремя</string>
+	<string name="set_time_button">Установить напоминание</string>
+</resources>

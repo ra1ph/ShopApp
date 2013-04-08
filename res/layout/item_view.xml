@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="30dip"
+    android:text="@string/info_item"/>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cost_text"    
+    android:layout_width="fill_parent"
+    android:layout_height="40dip"
+    android:gravity="left"
+    android:text="@string/cost_text"/>
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cost_val"
+    android:layout_width="fill_parent"
+    android:layout_height="40dip"
+    android:layout_toLeftOf="@id/cost_text"/>
+    <Gallery xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/gallery"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:spacing="1dip"    
+    android:layout_below="@id/cost_val" />
+</RelativeLayout>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="30dip"
+    android:text="@string/notify_me"/>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/description_text"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentTop="true" />
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/add_basket"
+    android:layout_width="fill_parent"
+    android:layout_height="50dip"
+    android:layout_alignParentBottom="true"
+    android:text="@string/add_basket" />
+</RelativeLayout>
+</LinearLayout>

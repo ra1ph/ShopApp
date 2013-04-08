@@ -1,0 +1,18 @@
+{
+	[
+		{
+			"id":0,
+			"name":"Кросовки Nike",
+			"id_cat":0,
+			"cost":20,
+			"image":"http://na.xera/img1.jpg"	
+		},
+		{
+			"id":1,
+			"name":"Куртка",
+			"id_cat":1,
+			"cost":40,
+			"image":"http://na.xera/img2.jpg"	
+		}
+	]
+}

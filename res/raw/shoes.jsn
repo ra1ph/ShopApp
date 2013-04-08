@@ -1,0 +1,14 @@
+[
+		{
+			"id":0,
+			"name":"Кросовки Nike",
+			"cost":20,
+			"image":"img1.jpg"	
+		},
+		{
+			"id":1,
+			"name":"Кросовки Abibas",
+			"cost":40,
+			"image":"img2.jpg"	
+		}
+]

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="100dip"
+    android:orientation="vertical" >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="90dip"
+    android:orientation="horizontal" >
+    <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/orderlist_image_item"
+    android:layout_width="90dip"
+    android:layout_height="90dip"/>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="90dip"
+    android:orientation="vertical">
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="15dip"
+    android:id="@+id/orderlist_idZakaz"
+    android:layout_gravity="right"/>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="15dip"
+    android:orientation="horizontal">    
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:id="@+id/orderlist_name_item"/>    
+    <Button xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="15dip"
+    android:layout_height="15dip"
+    android:id="@+id/orderlist_delbutton"
+    android:layout_gravity="right"/>
+    </LinearLayout>
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/orderlist_description_item"/>
+    </LinearLayout>    
+</LinearLayout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal">
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:text="@string/order_status"/>
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:id="@+id/orderlist_status"/>
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:id="@+id/orderlist_cost_item"
+    android:layout_gravity="right"/>
+</LinearLayout> 
+</LinearLayout>

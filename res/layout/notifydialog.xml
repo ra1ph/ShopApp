@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" 
+    android:gravity="center_horizontal">
+    
+       <TextView style="@style/Dialog_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/your_order"
+        android:text="@string/you_order_delivered" />
+    
+     <TextView style="@style/Dialog_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/you_may_get_order"/>
+     
+     <Button style="@style/Dialog_button_yes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/i_will_come"
+        android:id="@+id/notify_yes_button"/>"
+     
+     <Button style="@style/Dialog_button_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/notify_later"
+        android:id="@+id/notify_no_button"/>
+     
+</LinearLayout>

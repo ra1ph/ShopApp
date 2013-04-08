@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="50dip">    
+</RelativeLayout>
+
+<LinearLayout 	xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="50dip">
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="@string/fio"
+	    android:layout_marginLeft="10dip"/>
+    
+    <EditText xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/edit_fio"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:hint="@string/help_fio"/>"
+    </LinearLayout>
+
+<LinearLayout 	xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="fill_parent"
+	    android:layout_height="50dip">
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="@string/n_tel"
+	    android:layout_marginLeft="10dip"/>
+    
+    <EditText xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/edit_n_tel"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:hint="@string/help_n_tel"/>
+    </LinearLayout>
+    
+<Button	xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/order_sub" 
+        android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:gravity="center"
+	    android:layout_gravity="center"
+        android:text="@string/order_sub"/>
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="@string/thank"
+	    android:layout_gravity="center"
+	    android:layout_marginLeft="10dip"/>
+    
+        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="@string/our_managers"
+	    android:gravity="center"
+	    android:layout_gravity="center"
+	    android:layout_marginLeft="10dip"/>
+</LinearLayout>

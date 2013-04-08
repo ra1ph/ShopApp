@@ -1,0 +1,14 @@
+[
+		{
+			"id":0,
+			"name":"Куртка Nike",
+			"cost":20,
+			"image":"http://na.xera/img1.jpg"	
+		},
+		{
+			"id":1,
+			"name":"Куртка Zara",
+			"id_cat":1,
+			"image":"http://na.xera/img2.jpg"	
+		}
+]

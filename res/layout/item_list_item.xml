@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="150dip"
+    android:orientation="vertical" >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="40dip"
+    android:orientation="vertical">
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:textSize="30dip"/>
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_cost"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true"
+    android:textSize="30dip"/>
+    </RelativeLayout>  
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_image"
+    android:layout_width="80dip"
+    android:layout_height="80dip"
+    android:layout_alignParentLeft="true"/>
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_description"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_toRightOf="@id/item_image"/>
+</RelativeLayout>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="30dip"
+    android:orientation="vertical">
+<CheckBox xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/btn_compare"    
+    android:layout_width="110dip"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:focusable="false"
+	android:text="@string/check_compare"/>
+	<CheckBox xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/btn_best"  
+    android:layout_width="110dip"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"    
+    android:layout_toRightOf="@id/btn_compare"
+    android:focusable="false"
+    android:text="@string/check_best"/>
+<CheckBox xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/btn_basket"  
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:layout_toRightOf="@+id/btn_best"
+    android:focusable="false"
+    android:text="@string/check_basket"/>
+</RelativeLayout>
+</LinearLayout>
