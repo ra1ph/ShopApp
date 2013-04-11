@@ -12,7 +12,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="50dip"
-    android:background="#FF178200">
+    android:background="@drawable/green_grad">
     <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/menu_icon"
     android:layout_width="50dip"
@@ -35,7 +35,7 @@
     android:id="@+id/parent_layout"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#FFDDDDDD">    
+    android:background="@drawable/gray_grad">    
 </LinearLayout>
     </LinearLayout>
 </FrameLayout>
