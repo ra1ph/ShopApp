@@ -28,9 +28,11 @@ public class CatList extends BaseActivity {
 	private ArrayList<Category> cats;
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);       
-    
+        super.onCreate(savedInstanceState);   
+        setContentView(R.layout.template_1);
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        //LinearLayout template_parent = (LinearLayout) findViewById(R.id.template_parent);
+            
         LinearLayout parent = (LinearLayout) findViewById(R.id.parent_layout);
         LinearLayout child = (LinearLayout) inflater.inflate(R.layout.catlist, null);
         parent.addView(child);
@@ -100,7 +102,7 @@ public class CatList extends BaseActivity {
 			View view = convertView;
 			final ViewHolder holder;
 			if (convertView == null) {
-				view = getLayoutInflater().inflate(R.layout.cat_list_item, null);
+				view = getLayoutInflater().inflate(R.layout.cat_list_item, parent,false);
 				holder = new ViewHolder();
 				holder.text = (TextView) view.findViewById(R.id.cat_name);
 				view.setTag(holder);

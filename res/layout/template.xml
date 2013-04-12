@@ -1,41 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/template_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
 
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
-    <LinearLayout android:id="@+id/menu" android:layout_width="match_parent" android:layout_height="fill_parent"
-        android:orientation="vertical">
-        <ListView android:id="@+id/menu_list" android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:orientation="vertical"/>
+    <LinearLayout
+        android:id="@+id/menu"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/menu_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
     </LinearLayout>
-    <LinearLayout android:id="@+id/app" android:layout_width="match_parent" android:layout_height="fill_parent"
-        android:orientation="vertical" android:background="#ffffffff">
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="50dip"
-    android:background="@drawable/green_grad">
-    <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/menu_icon"
-    android:layout_width="50dip"
-    android:layout_height="50dip"
-    android:background="@drawable/ic_launcher"
-    android:layout_alignParentLeft="true"/>
-    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/title"
-    android:layout_width="wrap_content"
-    android:layout_height="50dip"
-    android:background="@drawable/ic_launcher"
-    android:layout_alignParentLeft="true"/>
-    <Button xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="50dip"
-    android:layout_height="50dip"
-    android:id = "@+id/top_button"
-    android:layout_alignParentRight="true"/>
-</RelativeLayout>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/parent_layout"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@drawable/gray_grad">    
-</LinearLayout>
-    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/app"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:background="#ffffffff"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:background="@drawable/green_grad"
+            android:id="@+id/header">
+
+            <Button
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/title_button"
+                android:layout_width="50dip"
+                android:layout_height="50dip"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/title_button" />
+
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/top_button"
+                android:layout_width="70dip"
+                android:layout_height="fill_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="2dip"
+                android:background="@drawable/green_grad" >
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:adjustViewBounds="true"
+                    android:padding="5dip"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/find_icon" />
+            </LinearLayout>
+
+            <TextView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/title"
+                style="@style/Title_text"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/top_button"
+                android:layout_toRightOf="@id/title_button"
+                android:gravity="center"
+                android:text="Test" />
+        </RelativeLayout>
+        
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:background="#FFFFFFFF" 
+            android:id="@+id/footer"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="160dip"
+                android:layout_height="50dip"
+                android:layout_marginRight="2dip"
+                android:background="@drawable/green_grad"
+                android:text="В сравнении 2 устройства" />
+
+            <TextView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="50dip"
+                android:background="@drawable/green_grad"
+                android:text="В корзине 2 устройства на сумму 1000 р." />
+        </LinearLayout>
+        
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/parent_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@id/footer"
+            android:layout_below="@id/header"
+            android:background="@drawable/gray_grad" >
+        </LinearLayout>
+    </RelativeLayout>
+
 </FrameLayout>

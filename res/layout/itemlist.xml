@@ -3,9 +3,32 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="50dip">
+    android:background="@drawable/gray_title_grad"
+    android:layout_height="50dip"
+    android:orientation="horizontal">
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    style="@style/Title_gray"
+    android:text="@string/sort"    
+    android:id="@+id/sort"/>
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    style="@style/Title_gray"    
+    android:id="@+id/sort_type"
+    android:layout_toRightOf="@id/sort"
+    android:text="Наименованию"/>
+    
+    <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:padding="2dip"
+    android:layout_alignParentRight="true"
+    android:src="@drawable/sort_arrow"/>
     
 </RelativeLayout>
 <ListView xmlns:android="http://schemas.android.com/apk/res/android"
