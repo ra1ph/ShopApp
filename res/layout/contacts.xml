@@ -6,15 +6,15 @@
     <TextView 
         style="@style/Title_gray"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dip"
         android:text="@string/contact_info"/>
 	<TextView 
-        style="@style/Text_caption"
+        style="@style/Small_common"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/sale_name"/>
 	<TextView 
-        style="@style/Text"
+        style="@style/Small_common"
         android:autoLink="map"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -22,29 +22,29 @@
 	<TextView 
         style="@style/Title_gray"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dip"
         android:text="@string/see_map"
         android:layout_marginTop="10dip"/>
     <TextView 
-        style="@style/Text"
+        style="@style/Small_common"
         android:autoLink="phone"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/tel1"/>
     <TextView 
-        style="@style/Text"
+        style="@style/Small_common"
         android:autoLink="phone"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/tel2"/>
     <TextView 
-        style="@style/Text"
+        style="@style/Small_common"
         android:autoLink="phone"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/tel3"/>
     <TextView 
-        style="@style/Text"
+        style="@style/Small_common"
         android:autoLink="phone"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -55,12 +55,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <TextView 
-        style="@style/Text"
+        style="@style/Small_common"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/icq"/>
         <TextView 
-        style="@style/Text"
+        style="@style/Small_common"
         android:id="@+id/icq1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -72,12 +72,12 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
         <TextView 
-        style="@style/Text"
+        style="@style/Small_common"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/icq"/>
         <TextView 
-        style="@style/Text"
+        style="@style/Small_common"
         android:id="@+id/icq2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -87,25 +87,20 @@
         <TextView 
         style="@style/Title_gray"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dip"
         android:text="@string/ask_callback"
         android:layout_marginTop="10dip"/>
         
         <TextView 
-        style="@style/Text"
+        style="@style/Small_common"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/email"/>
         <TextView 
-        style="@style/Text"
+        style="@style/Small_common"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:autoLink="email"
         android:text="@string/mail1"/>
         
-        <TextView 
-        style="@style/Title_gray"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dip"/>
 </LinearLayout>

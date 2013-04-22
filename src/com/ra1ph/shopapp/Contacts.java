@@ -8,6 +8,7 @@ import android.text.ClipboardManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -19,8 +20,11 @@ public class Contacts extends BaseActivity {
     LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     LinearLayout parent = (LinearLayout) findViewById(R.id.parent_layout);
     LinearLayout child = (LinearLayout) inflater.inflate(R.layout.contacts, null);
+    child.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,LayoutParams.FILL_PARENT));
     parent.addView(child);
     
+    TextView title = (TextView) findViewById(R.id.title);
+    title.setText("Контакты");    
     
     ((TextView) findViewById(R.id.icq1)).setOnClickListener(new ICQClickListener());
     ((TextView) findViewById(R.id.icq2)).setOnClickListener(new ICQClickListener());

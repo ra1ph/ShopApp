@@ -76,21 +76,26 @@
             android:layout_height="50dip"
             android:background="#FFFFFFFF" 
             android:id="@+id/footer"
+            android:orientation="horizontal"
             android:layout_alignParentBottom="true">
 
             <TextView
                 xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="160dip"
+                android:layout_width="1dip"
                 android:layout_height="50dip"
+                android:layout_weight="0.50"
                 android:layout_marginRight="2dip"
                 android:background="@drawable/green_grad"
+                android:id="@+id/in_compare_text"
                 android:text="В сравнении 2 устройства" />
 
             <TextView
                 xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="fill_parent"
+                android:layout_width="1dip"
                 android:layout_height="50dip"
+                android:layout_weight="0.50"
                 android:background="@drawable/green_grad"
+                android:id="@+id/in_basket_text"
                 android:text="В корзине 2 устройства на сумму 1000 р." />
         </LinearLayout>
         

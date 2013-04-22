@@ -3,63 +3,91 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="50dip">    
-</RelativeLayout>
 
-<LinearLayout 	xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="50dip">
-    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:text="@string/fio"
-	    android:layout_marginLeft="10dip"/>
-    
-    <EditText xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/edit_fio"
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:hint="@string/help_fio"/>"
-    </LinearLayout>
+    <TextView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/Title_gray"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:text="@string/your_data" />
 
-<LinearLayout 	xmlns:android="http://schemas.android.com/apk/res/android"
-	    android:layout_width="fill_parent"
-	    android:layout_height="50dip">
-    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:text="@string/n_tel"
-	    android:layout_marginLeft="10dip"/>
-    
-    <EditText xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/edit_n_tel"
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:hint="@string/help_n_tel"/>
-    </LinearLayout>
-    
-<Button	xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/order_sub" 
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+    <TableRow
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+            <TextView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.30"
+            android:layout_marginLeft="10dip"
+            android:text="@string/fio" 
+            style="@style/Small_common"/>"
+
+        <EditText
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/edit_fio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.70"
+            android:hint="@string/help_fio" />
+    </TableRow>
+
+    <TableRow
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip" >
+
+        <TextView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.30"
+            android:layout_marginLeft="10dip"
+            android:text="@string/n_tel" 
+            style="@style/Small_common"/>
+
+        <EditText
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/edit_n_tel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.70"
+            android:hint="@string/help_n_tel" />
+    </TableRow>
+    </TableLayout>
+
+    <Button
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/order_sub"
         android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:gravity="center"
-	    android:layout_gravity="center"
-        android:text="@string/order_sub"/>
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/order_sub"
+        style="@style/Dialog_button_yes" />
 
-    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:text="@string/thank"
-	    android:layout_gravity="center"
-	    android:layout_marginLeft="10dip"/>
-    
-        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:text="@string/our_managers"
-	    android:gravity="center"
-	    android:layout_gravity="center"
-	    android:layout_marginLeft="10dip"/>
+    <TextView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dip"
+        android:text="@string/thank" 
+        style="@style/Small_common"/>
+
+    <TextView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dip"
+        android:gravity="center"
+        android:text="@string/our_managers" 
+        style="@style/Small_common"/>
+
 </LinearLayout>

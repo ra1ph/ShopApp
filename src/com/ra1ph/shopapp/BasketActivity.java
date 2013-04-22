@@ -58,7 +58,8 @@ public class BasketActivity extends BaseActivity {
 			
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				Intent intent = new Intent(BasketActivity.this,ItemView.class);
-				intent.putExtra(Names.ITEM, bask.get(position));
+				intent.putExtra(Names.ITEM, bask.get(position).id);
+				intent.putExtra(Names.FROM_BASKET, true);
 				startActivity(intent);
 			}
 		});
@@ -74,6 +75,9 @@ public class BasketActivity extends BaseActivity {
 			}
 			
 		});
+		
+		TextView cost = (TextView) findViewById(R.id.all_cost);
+		cost.setText(Double.toString(basket_list.summaryCost));
 	    }
 	class ItemAdapter extends BaseAdapter {
 
@@ -110,6 +114,7 @@ public class BasketActivity extends BaseActivity {
 				holder.cost = (TextView) view.findViewById(R.id.basket_cost_item);
 				holder.description = (TextView) view.findViewById(R.id.basket_description_item);
 				holder.image = (ImageView) view.findViewById(R.id.basket_image_item);
+				holder.delete = (Button) view.findViewById(R.id.basket_delete_button);
 				view.setTag(holder);
 			} else
 				holder = (ViewHolder) view.getTag();
@@ -121,6 +126,20 @@ public class BasketActivity extends BaseActivity {
 			imageLoader.init(ImageLoaderConfiguration.createDefault(BasketActivity.this));
 			String img = Names.SERVER_NAME + Names.IMAGE_FOLDER + bask.get(position).image+"0.jpg";
 			imageLoader.displayImage(img, holder.image, options);
+			
+			holder.delete.setOnClickListener(new OnClickListener(){
+
+				public void onClick(View arg0) {
+					// TODO Auto-generated method stub
+					basket_list.items_basket.remove(position);
+					bask = basket_list.items_basket;
+					if(bask.size()==0)BasketActivity.this.finish();
+					ItemAdapter.this.notifyDataSetChanged();
+				}
+				
+			});
+			holder.delete.setFocusable(false);
+			holder.delete.setClickable(true);
 
 			return view;
 		}

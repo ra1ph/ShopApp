@@ -31,6 +31,8 @@ public class Names{
 	public static String SECRET_ID = "secretId";
 	public static String ERROR = "error";
 	public static String NOTIFY_NUM = "notifyNum";
+	public static String FROM_BASKET = "fromBasket";
+	public static String ORDER_ID = "orderId"; 
 	
 	public static String NOTIFY_TYPE = "notifyType";
 	public static int NOTIFY_ONCE = 0;

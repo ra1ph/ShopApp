@@ -3,40 +3,78 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="40dip"
-    android:text="@string/info_sale"
-    android:background="#FF2A2A2A"/>
 
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="30dip"
-    android:text="@string/in_your_basket"/>
-<ListView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/basket_itemlist"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"/>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="50dip"
-    android:orientation="vertical">
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-	android:id="@+id/all_cost"
-    android:layout_alignParentRight="true"/>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_toLeftOf="@id/all_cost"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/money_for_sale"/>
-</RelativeLayout>
-<Button xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/confirm_order"
-    android:layout_width="wrap_content"
-    android:layout_height="50dip"
-    android:text="@string/confirm_order"
-    android:layout_gravity="center"
-    android:background="#FF178200"/>
+    <TextView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/Title_gray"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:text="@string/info_sale" />
+
+    <TextView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/Small_common"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/in_your_basket" 
+        android:layout_marginBottom="10dip"/>
+
+    <ListView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/basket_itemlist"
+        style="@style/List_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    
+    <ImageView
+        android:src="@android:drawable/divider_horizontal_dark"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:padding="5dip"/>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:orientation="vertical" >
+
+        <TextView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/all_cost_scale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true" 
+            android:text="usd"
+            android:paddingLeft="5dip"
+            style="@style/Midle_common"/>"
+        
+        <TextView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/all_cost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/all_cost_scale" 
+            android:text="100"
+            android:paddingLeft="5dip"
+            style="@style/Midle_common"/>
+
+        <TextView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/all_cost"
+            android:text="@string/money_for_sale" 
+            style="@style/Midle_common"/>
+    </RelativeLayout>
+
+    <Button
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/confirm_order"
+        android:layout_width="wrap_content"
+        android:layout_height="50dip"
+        android:layout_gravity="center"
+        style="@style/Dialog_button_yes"
+        android:text="@string/confirm_order" />
+
 </LinearLayout>

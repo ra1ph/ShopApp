@@ -25,6 +25,7 @@ import android.view.animation.Animation.AnimationListener;
 import android.view.animation.TranslateAnimation;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.TextView;
@@ -44,6 +45,7 @@ public abstract class BaseActivity extends Activity implements AnimationListener
 	protected static Basket basket_list;
 	protected static Compare compare_list;
 	public String CATEGORY_ID = "id_cat";
+	public String CATEGORY_NAME = "cat_name";
 	public int NO_CATEGORY = -1;
 	public final float IS_SLIDE = 10;
 	public static SharedPreferences settings;
@@ -100,6 +102,12 @@ public abstract class BaseActivity extends Activity implements AnimationListener
             this.bottom = bottom;
         }
     }
+    
+    @Override
+    protected void onResume() {
+    	updateFooter();
+    	super.onResume();
+    }
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -115,9 +123,27 @@ public abstract class BaseActivity extends Activity implements AnimationListener
         ViewUtils.printView("menu", menu);
         ViewUtils.printView("app", app);       
 
-        
+        updateFooter();
     }
 
+    public void updateFooter(){
+    	LinearLayout footer = (LinearLayout) findViewById(R.id.footer);
+    	TextView comp = (TextView) findViewById(R.id.in_compare_text);
+    	TextView bask = (TextView) findViewById(R.id.in_basket_text);
+    	if((footer!=null)&&(comp!=null)&&(bask!=null)){
+    	if(compare_list.items_compare.size()>0){
+    		comp.setText("В сравнении "+Integer.toString(compare_list.items_compare.size())+" устройства");
+    		comp.setVisibility(View.VISIBLE);
+    	}else comp.setText("В сравнении ни одного устройства");
+    	if(basket_list.items_basket.size()>0){
+    		bask.setVisibility(View.VISIBLE);
+    		bask.setText("В корзине "+Integer.toString(basket_list.items_basket.size())+" устройства на сумму "+Double.toString(basket_list.summaryCost)+" usd");
+    	}else bask.setText("В корзине ни одного устройства");
+    	}
+    	/*if((compare_list.items_compare.size()==0)&&(basket_list.items_basket.size()==0))footer.setVisibility(View.INVISIBLE);
+    	else footer.setVisibility(View.VISIBLE);*/
+    }
+    
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.main_menu, menu);

@@ -12,12 +12,14 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnDismissListener;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -50,6 +52,7 @@ public class NewOrder extends BaseActivity {
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         LinearLayout parent = (LinearLayout) findViewById(R.id.parent_layout);
         LinearLayout child = (LinearLayout) inflater.inflate(R.layout.new_order, null);
+        child.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,LayoutParams.FILL_PARENT));
         parent.addView(child);
         
         final SharedPreferences settings = getSharedPreferences(Names.APP_NAME,MODE_PRIVATE);
@@ -139,7 +142,8 @@ public class NewOrder extends BaseActivity {
 							DBEditor dbe = new DBEditor(NewOrder.this);
 							dbe.addOrder(order);
 							dbe.close();
-							basket_list.clear();
+							basket_list.clear(NewOrder.this);
+							
 							
 							NewOrder.this.finish();
 							}

@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.Gallery;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 
 public class ItemView extends BaseActivity {
@@ -42,6 +43,19 @@ public class ItemView extends BaseActivity {
         item = dbe.getItem(this.getIntent().getIntExtra(Names.ITEM,-1));
         dbe.close();
         
+        TextView addToBasket = (TextView) findViewById(R.id.add_basket);
+        boolean fromBasket = this.getIntent().getBooleanExtra(Names.FROM_BASKET, false);
+        if(fromBasket) addToBasket.setVisibility(View.INVISIBLE);
+        else addToBasket.setOnClickListener(new OnClickListener(){
+
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				basket_list.addItem(item, ItemView.this);
+				v.setVisibility(View.INVISIBLE);
+			}
+        	
+        });
+                
 		options = new DisplayImageOptions.Builder()
 		.showImageForEmptyUri(R.drawable.ic_launcher)
 		.showStubImage(R.drawable.ic_launcher)
@@ -55,12 +69,19 @@ public class ItemView extends BaseActivity {
 
 		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 			Intent intent = new Intent(ItemView.this,ImageViewer.class);
-			intent.putExtra(Names.ITEM, item);
+			intent.putExtra(Names.ITEM, item.id);
 			intent.putExtra(Names.FOTO_ID, position);
 			startActivity(intent);
 		}
 		
 	});
+	
+	TextView desc = (TextView) findViewById(R.id.description_text);
+	TextView cost = (TextView) findViewById(R.id.cost_val);
+	TextView title = (TextView) findViewById(R.id.title);
+    title.setText(item.name);
+	desc.setText(item.description);
+	cost.setText(Double.toString(item.cost));
     }
     
 	private class ImagePagerAdapter extends BaseAdapter {
@@ -93,6 +114,7 @@ public class ItemView extends BaseActivity {
 			ImageView imageView = (ImageView) convertView;
 			if (imageView == null) {
 				imageView = (ImageView) inflater.inflate(R.layout.item_gallery_image, parent, false);
+				
 			}
 			String img = Names.SERVER_NAME + Names.IMAGE_FOLDER + item.image+Integer.toString(position)+".jpg";
 			imageLoader.displayImage(img, imageView, options);

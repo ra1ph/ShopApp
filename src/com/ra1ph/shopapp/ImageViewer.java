@@ -19,6 +19,7 @@ import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.assist.ImageLoadingListener;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
+import com.ra1ph.shopapp.data.DBEditor;
 import com.ra1ph.shopapp.logic.Item;
 
 /**
@@ -37,9 +38,10 @@ public class ImageViewer extends BaseActivity {
         LinearLayout parent = (LinearLayout) findViewById(R.id.parent_layout);
         LinearLayout child = (LinearLayout) inflater.inflate(R.layout.ac_image_pager, null);
         parent.addView(child);
-        
-		item = (Item) this.getIntent().getSerializableExtra(Names.ITEM);
+        DBEditor dbe = new DBEditor(this);
+		item = dbe.getItem(this.getIntent().getIntExtra(Names.ITEM,-1));
 		int pagerPosition = this.getIntent().getIntExtra(Names.FOTO_ID, -1);
+		dbe.close();
 
 		options = new DisplayImageOptions.Builder()
 			.showImageForEmptyUri(R.drawable.ic_launcher)

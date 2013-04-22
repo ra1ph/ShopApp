@@ -45,6 +45,9 @@ public class OrderList extends BaseActivity {
         child.setLayoutParams(params);
         parent.addView(child); 
         
+        TextView title = (TextView) findViewById(R.id.title);
+        title.setText("Мои заказы");
+        
         ListView item_list = (ListView) findViewById(R.id.orderlist);
         
 		options = new DisplayImageOptions.Builder()
@@ -61,8 +64,8 @@ public class OrderList extends BaseActivity {
 		item_list.setOnItemClickListener(new OnItemClickListener() {
 			
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				Intent intent = new Intent(OrderList.this,ItemView.class);
-				
+				Intent intent = new Intent(OrderList.this,OrderView.class);
+				intent.putExtra(Names.ORDER_ID, bask.get(position).idZakaz);
 				startActivity(intent);
 			}
 		});
@@ -109,9 +112,7 @@ public class OrderList extends BaseActivity {
 			View view = convertView;
 			final ViewHolder holder;
 			
-			dbe = new DBEditor(OrderList.this);
 			items = dbe.getOrderProductList(bask.get(position).idZakaz);
-			dbe.close();
 			if (convertView == null) {
 				view = getLayoutInflater().inflate(R.layout.orderlist_item, null);
 				holder = new ViewHolder();
@@ -137,6 +138,8 @@ public class OrderList extends BaseActivity {
 				public void onClick(View arg0) {
 					// TODO Auto-generated method stub
 					dbe.deleteOrder(bask.get(position).idZakaz);
+					bask = dbe.getOrderList();
+					ItemAdapter.this.notifyDataSetChanged();
 				}
 				
 			});

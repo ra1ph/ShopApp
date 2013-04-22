@@ -26,6 +26,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
@@ -39,6 +40,8 @@ public class SetTimeDialog extends Activity {
 	Intent intent;
 	MyServiceConnection sConn;
 	StatusService service;
+	public static int RESULT_OK=1;
+	public static int RESULT_BAD=-1;
 	
 	
     @Override
@@ -49,6 +52,7 @@ public class SetTimeDialog extends Activity {
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         LinearLayout parent = (LinearLayout) findViewById(R.id.parent_layout);
         LinearLayout child = (LinearLayout) inflater.inflate(R.layout.settimedialog, null);
+        child.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,LayoutParams.FILL_PARENT));
         parent.addView(child);
         
         date = (DatePicker) findViewById(R.id.date_picker);
@@ -69,7 +73,8 @@ public class SetTimeDialog extends Activity {
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
 					sendStatus(chkBox.isChecked(),zakazId);
-					setNotification(chkBox.isChecked(),dialog_res,zakazId);					
+					setNotification(chkBox.isChecked(),dialog_res,zakazId);		
+					setResult(RESULT_OK);
 					finish();
 				}
         		

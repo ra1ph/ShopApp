@@ -14,6 +14,9 @@
     <string name="app_name">Shopping helper</string>
     <string name="catlist_title">Выберите категорию товара</string>
     <string name="sort">Сортировать по:</string>
+    <string name="your_data">Укажите ваши данные</string>
+    <string name="option_caption">Выберите опции товара</string>
+    <string name="list_of_orders">Список Ваших заказов</string>
     <!-- Labels -->
     <string name="label_activity_examples">Activity Examples</string>
     <string name="menu_item_clear_memory_cache">Clear memory cache</string>
@@ -58,5 +61,10 @@
 	<string name="notify_later">Нет, напомнить мне позже</string>
 	<string name="you_plan_come">Вы планируете заехать</string>
 	<string name="precision_time">Я буду точно вовремя</string>
+	<string name="date_of_order">Дата заказа:</string>
+	
+	
+	<!-- Buttons -->
 	<string name="set_time_button">Установить напоминание</string>
+	<string name="enter_caption">Подтвердить</string>
 </resources>

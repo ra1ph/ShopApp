@@ -1,7 +1,6 @@
 package com.ra1ph.shopapp.data;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -17,7 +16,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteStatement;
 import android.util.Log;
 
 public class DBEditor {
@@ -122,7 +120,7 @@ public class DBEditor {
 	}
 	
 	public void addOrder(Order order){
-		int id=0;
+		
 		db.execSQL("CREATE TABLE IF NOT EXISTS " + TBL_ORDERS + " (_id INTEGER PRIMARY KEY, idZakaz INTEGER, status TEXT, remark TEXT, sklad_dt);");
 		Cursor cursor = db.rawQuery("select * from '"+TBL_ORDERS+"'", null);
 		cursor.moveToLast();
@@ -141,7 +139,7 @@ public class DBEditor {
 	}
 	
 	public void addProduct(int idZakaz,Product prod){
-		int id=0;
+		
 		db.execSQL("CREATE TABLE IF NOT EXISTS " + TBL_PRODUCTS + " (_id INTEGER PRIMARY KEY, idZakaz INTEGER, idProd INTEGER);");
 		Cursor cursor = db.rawQuery("select * from '"+TBL_PRODUCTS+"'", null);
 			cursor.moveToLast();

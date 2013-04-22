@@ -5,13 +5,13 @@
     android:orientation="vertical" 
     android:gravity="center_horizontal">
     
-       <TextView style="@style/Dialog_text"
+       <TextView style="@style/Small_common"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/your_order"
         android:text="@string/you_order_delivered" />
     
-     <TextView style="@style/Dialog_text"
+     <TextView style="@style/Small_common"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/you_may_get_order"/>

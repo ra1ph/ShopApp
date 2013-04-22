@@ -1,61 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="100dip"
+    android:layout_height="wrap_content"
     android:orientation="vertical" >
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="90dip"
-    android:orientation="horizontal" >
-    <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/orderlist_image_item"
-    android:layout_width="90dip"
-    android:layout_height="90dip"/>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="90dip"
-    android:orientation="vertical">
-    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="15dip"
-    android:id="@+id/orderlist_idZakaz"
-    android:layout_gravity="right"/>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="15dip"
-    android:orientation="horizontal">    
-    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="fill_parent"
-    android:id="@+id/orderlist_name_item"/>    
-    <Button xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="15dip"
-    android:layout_height="15dip"
-    android:id="@+id/orderlist_delbutton"
-    android:layout_gravity="right"/>
-    </LinearLayout>
-    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/orderlist_description_item"/>
-    </LinearLayout>    
-</LinearLayout>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="horizontal">
-    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="fill_parent"
-    android:text="@string/order_status"/>
-    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="fill_parent"
-    android:id="@+id/orderlist_status"/>
-    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="fill_parent"
-    android:id="@+id/orderlist_cost_item"
-    android:layout_gravity="right"/>
-</LinearLayout> 
+    android:orientation="horizontal" 
+    android:layout_marginBottom="5dip">
+
+    <ImageView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/orderlist_image_item"
+        android:layout_width="90dip"
+        android:layout_height="90dip" />
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="90dip"
+        android:orientation="vertical" >
+
+        <TextView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/orderlist_idZakaz"
+            style="@style/Small_common"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:text="456513" />
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"> 
+        <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/orderlist_name_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" 
+                android:text="Test item"
+                style="@style/Midle_common"/>"
+
+            <Button
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/orderlist_delbutton"
+                android:focusable="false"
+                style="@style/Dialog_button_no"
+                android:layout_width="30dip"
+                android:layout_height="30dip"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dip"
+                android:text="-" />
+             </RelativeLayout>
+             
+            <TextView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/orderlist_description_item"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" 
+                android:text="Test description, Test description, Test description, "
+                style="@style/Small_common"/>"
+        </LinearLayout>
+    </LinearLayout>
+	</LinearLayout>
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/order_status" 
+            android:id="@+id/orderlist_status_caption"
+            style="@style/Midle_common"/>"
+
+        <TextView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/orderlist_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text="test_status"
+            android:layout_toRightOf="@id/orderlist_status_caption"
+            style="@style/Midle_common"/>
+
+        <TextView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/orderlist_cost_scale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="USD"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            style="@style/Midle_common"/>
+        <TextView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/orderlist_cost_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/orderlist_cost_scale"
+            style="@style/Midle_common"
+            android:text="5000.0"/>
+    </RelativeLayout>
+
 </LinearLayout>

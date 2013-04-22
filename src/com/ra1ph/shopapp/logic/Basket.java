@@ -15,14 +15,18 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.Spinner;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
+import com.ra1ph.shopapp.BaseActivity;
 import com.ra1ph.shopapp.R;
 import com.ra1ph.shopapp.logic.Order.Option;
 
 public class Basket{
 	public ArrayList<Item> items_basket;
-	public static Basket instance;
+	public static Basket instance;	
+	public double summaryCost=0;
 	
 public Basket(){
 	items_basket = new ArrayList<Item>();
@@ -34,30 +38,42 @@ public boolean search(int id){
 	return false;
 }
 
-public void removeItem(int id){
+public void removeItem(int id, BaseActivity context){
 	int i=0;
 	for(i=0;i<items_basket.size();i++) if(items_basket.get(i).id==id) items_basket.remove(i);
+	updateSummaryCost();
+	context.updateFooter();
 }
 
-public void clear(){
+public void clear(BaseActivity context){
 items_basket.clear();
+updateSummaryCost();
+context.updateFooter();
 }
 
-public void addItem(final Item item,Activity context)
+public void updateSummaryCost(){
+	summaryCost=0;
+	for(int i=0;i<items_basket.size();i++){
+		summaryCost+=items_basket.get(i).cost;
+	}
+}
+
+public void addItem(final Item item,final BaseActivity context)
 {
 	if(item.options.size()>0){
     LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     //Inflate the view from a predefined XML layout
     View layout = inflater.inflate(R.layout.option_popup,null);
     // create a 300px width and 470px height PopupWindow
-    final PopupWindow pw = new PopupWindow(layout, LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT);
-    // display the popup in the center
-    pw.showAtLocation(layout, Gravity.CENTER, 0, 0);
-    LinearLayout labels = (LinearLayout) layout.findViewById(R.id.conainer_option_label);
-    final LinearLayout values = (LinearLayout) layout.findViewById(R.id.conainer_option);    
+    
+    final TableLayout values = (TableLayout) layout.findViewById(R.id.option_container);    
     int i = 0;
     for(i=0;i<item.options.size();i++){
-    	TextView label = new TextView(context);
+    	
+    	TableRow container = new TableRow(context);
+    	container.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT));
+    	container.setOrientation(LinearLayout.HORIZONTAL);
+    	TextView label = (TextView) inflater.inflate(R.layout.option_caption_template, null);
     	label.setText(item.options.get(i).name);
     	Spinner value = new Spinner(context);
     	ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item);
@@ -67,10 +83,17 @@ public void addItem(final Item item,Activity context)
     	}
     	adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
     	value.setAdapter(adapter);
-    	labels.addView(label);
-    	values.addView(value);
+    	//value.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,LayoutParams.WRAP_CONTENT));
+    	container.addView(label);
+    	container.addView(value);
+    	values.addView(container);
     }
     Button btn = (Button) layout.findViewById(R.id.select_option);
+    
+    final PopupWindow pw = new PopupWindow(layout, LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT);
+    // display the popup in the center
+    pw.showAtLocation(layout, Gravity.CENTER, 0, 0);
+    
     btn.setOnClickListener(new OnClickListener(){
 
 		public void onClick(View v) {
@@ -78,7 +101,7 @@ public void addItem(final Item item,Activity context)
 			ArrayList<Option> options = new ArrayList<Option>();
 			int i=0;
 			for(i=0;i<item.options.size();i++){
-				Spinner spn = (Spinner) values.getChildAt(i);
+				Spinner spn = (Spinner) ((LinearLayout) values.getChildAt(i)).getChildAt(1);
 				ArrayList<String> arr = new ArrayList<String>();
 				arr.add(item.options.get(i).value.get(spn.getSelectedItemPosition()));
 				Option opt = new Option(arr,item.options.get(i).name);
@@ -86,13 +109,19 @@ public void addItem(final Item item,Activity context)
 			}
 			item.options=options;
 			items_basket.add(item);
+			updateSummaryCost();
+			context.updateFooter();
 			pw.dismiss();
 		}
     
     });
+    
 	}else{
 		items_basket.add(item);
+		updateSummaryCost();
+		context.updateFooter();
 	}
+	
 }
 
 public static Basket getInstance() {

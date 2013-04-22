@@ -5,12 +5,13 @@
     android:orientation="vertical" >
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="40dip"
-    android:text="@string/info_sale"
-    android:background="#FF2A2A2A"/>
+    android:layout_height="50dip"
+    android:text="@string/list_of_orders"
+    style="@style/Title_gray"/>"
 
 <ListView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/orderlist"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content"/>
+    android:layout_height="wrap_content"
+    style="@style/List_view"/>"
 </LinearLayout>

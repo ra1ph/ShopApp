@@ -2,79 +2,101 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical">
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="50dip"
-    android:text="@string/info_item"
-    style="@style/Title_gray"/>"
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="40dip">
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content">
-    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/cost_scale"    
-    android:layout_width="wrap_content"
-    android:layout_height="fill_parent"
-    style="@style/Small_common"
-    android:layout_alignParentRight="true"
-    android:paddingLeft="15dip"
-    android:gravity="bottom"
-    android:text="usd"/>
-    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/cost_val"
-    android:layout_width="wrap_content"
-    android:layout_height="fill_parent"
-    android:gravity="bottom"
-    android:text="999.0"
-    android:layout_toLeftOf="@id/cost_scale"
-    android:paddingLeft="15dip"
-    style="@style/Large_common"/>
-    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/cost_text"    
-    android:layout_width="wrap_content"
-    android:layout_height="fill_parent"
-    android:layout_toLeftOf="@id/cost_val"
-    android:gravity="bottom"
-    style="@style/Large_common"
-    android:text="@string/cost_text"/>
-    </RelativeLayout>
-    <Gallery xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/gallery"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center_vertical"
-    android:spacing="1dip"    
-    android:layout_below="@id/cost_val" />
-</RelativeLayout>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="40dip"
-    style="@style/Title_gray"
-    android:text="@string/notify_me"/>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:orientation="vertical" >
 
-<TextView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/description_text"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentTop="true" 
-    style="@style/Small_common"/>"
-<TextView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/add_basket"
-    android:layout_width="fill_parent"
-    android:layout_height="50dip"
-    android:layout_alignParentBottom="true"
-    android:text="@string/add_basket" 
-    style="@style/Title_text"
-    android:gravity="center"
-    android:background="@drawable/green_grad"/>
-</RelativeLayout>
+    <TextView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/Title_gray"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:text="@string/info_item" />
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="40dip" >
+
+            <TextView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/cost_scale"
+                style="@style/Small_common"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_alignParentRight="true"
+                android:gravity="bottom"
+                android:paddingLeft="15dip"
+                android:text="usd" />
+
+            <TextView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/cost_val"
+                style="@style/Large_common"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_toLeftOf="@id/cost_scale"
+                android:gravity="bottom"
+                android:paddingLeft="15dip"
+                android:text="999.0" />
+
+            <TextView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/cost_text"
+                style="@style/Large_common"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_toLeftOf="@id/cost_val"
+                android:gravity="bottom"
+                android:text="@string/cost_text" />
+        </RelativeLayout>
+
+        <Gallery
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/gallery"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:minHeight="20dip"
+            android:spacing="1dip" />
+    </LinearLayout>
+
+    <TextView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/Title_gray"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:text="@string/notify_me" />
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <TextView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/description_text"
+            style="@style/Small_common"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" />
+
+        <TextView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/add_basket"
+            style="@style/Title_text"
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/green_grad"
+            android:gravity="center"
+            android:text="@string/add_basket" />
+    </RelativeLayout>
+
 </LinearLayout>

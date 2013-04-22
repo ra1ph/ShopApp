@@ -12,6 +12,7 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
@@ -44,9 +45,10 @@ public class CompareActivity extends BaseActivity {
         child.setLayoutParams(params);
 
         parent.addView(child);
-        ViewPager pgr = (ViewPager) findViewById(R.id.pager); 
+        final ViewPager pgr = (ViewPager) findViewById(R.id.pager); 
         pgr.setAdapter(new SimplePagerAdapter());
         pgr.setCurrentItem(1);
+        
         
 		options = new DisplayImageOptions.Builder()
 		.showImageForEmptyUri(R.drawable.ic_launcher)
@@ -108,7 +110,7 @@ public class CompareActivity extends BaseActivity {
 	        return view.equals(object);
 	    }
     	
-		private void enterPage(View v,int position,View parent){
+		private void enterPage(View v,final int position,View parent){
 			TextView cost = (TextView) v.findViewById(R.id.cost_val);
 			TextView descr = (TextView) v.findViewById(R.id.description_text);
 			TextView name = (TextView) v.findViewById(R.id.name_text);
@@ -123,6 +125,32 @@ public class CompareActivity extends BaseActivity {
 			ArrayList<View> lst = new ArrayList<View>();
 			lst.add(gallery);
 			((ViewPager)parent).addFocusables(lst, ViewPager.FOCUSABLES_ALL,ViewGroup.FOCUS_BEFORE_DESCENDANTS);
+			
+			TextView addToBasket = (TextView) v.findViewById(R.id.add_basket);
+	        addToBasket.setOnClickListener(new OnClickListener(){
+
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					basket_list.addItem(cmp.get(position), CompareActivity.this);
+					v.setVisibility(View.INVISIBLE);
+				}
+	        	
+	        });
+	        
+	        TextView delFromComp = (TextView) v.findViewById(R.id.del_compare);
+	        delFromComp.setOnClickListener(new OnClickListener(){
+
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					compare_list.items_compare.remove(position);
+					cmp = compare_list.items_compare;
+					if(cmp.size()==0)CompareActivity.this.finish();
+					updateFooter();
+					SimplePagerAdapter.this.notifyDataSetChanged();
+				}
+	        	
+	        });
+			
 			
 		}
     }

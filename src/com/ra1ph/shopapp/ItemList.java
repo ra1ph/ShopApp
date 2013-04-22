@@ -49,13 +49,17 @@ public class ItemList extends BaseActivity {
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         LinearLayout parent = (LinearLayout) findViewById(R.id.parent_layout);
         LinearLayout child = (LinearLayout) inflater.inflate(R.layout.itemlist, null);
-        parent.addView(child);   
+        parent.addView(child);          
       
         ListView item_list = (ListView) findViewById(R.id.itemlist);
         DBEditor dbe = new DBEditor(this);
         id_cat = this.getIntent().getIntExtra(CATEGORY_ID,NO_CATEGORY);
+        String cat_name=this.getIntent().getStringExtra(CATEGORY_NAME);
         items = dbe.getItems(id_cat);
         dbe.close();
+        
+        TextView title = (TextView) findViewById(R.id.title);
+        title.setText(cat_name);
         
         if (Intent.ACTION_SEARCH.equals(this.getIntent().getAction())) { 
             //Берем строку запроса из экстры
@@ -75,7 +79,7 @@ public class ItemList extends BaseActivity {
 		
 		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 			Intent intent = new Intent(ItemList.this,ItemView.class);
-			intent.putExtra(Names.ITEM, position);
+			intent.putExtra(Names.ITEM, items.get(position).id);
 			startActivity(intent);
 		}
 	});
@@ -144,6 +148,7 @@ public class ItemList extends BaseActivity {
 					CheckBox chk = (CheckBox) v;
 					if(chk.isChecked()) compare_list.items_compare.add(items.get(position));
 					else compare_list.removeItem(items.get(position).id);
+					updateFooter();
 				}
 				
 			});
@@ -156,7 +161,7 @@ public class ItemList extends BaseActivity {
 					if(chk.isChecked()){
 						basket_list.addItem(items.get(position), ItemList.this);
 						}
-					else basket_list.removeItem(items.get(position).id);
+					else basket_list.removeItem(items.get(position).id, ItemList.this);
 				}
 				
 			});
